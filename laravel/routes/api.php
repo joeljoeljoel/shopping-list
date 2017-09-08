@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('slackCommandToken')->post('/shoppinglist', 'ShoppingListRequestController@index');
+Route::middleware('slackButtonToken')->post('/button', 'ItemRequestController@index');
